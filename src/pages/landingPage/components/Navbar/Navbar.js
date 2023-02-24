@@ -4,7 +4,7 @@ import React from 'react';
 
 function Navbar() {
   return (
-    <nav class="navbar bg-body-tertiary navbar-expand-md">
+    <nav class="navbar sticky-top navbar-expand-md">
 
     <a class="navbar-brand font24 fontcolor ml-5" href="#">
       Bootstrap

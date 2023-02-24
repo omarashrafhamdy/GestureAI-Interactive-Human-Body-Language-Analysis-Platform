@@ -5,8 +5,6 @@ import {
   useNavigate
 } from 'react-router-dom';
 
-import img from './img.jpeg';
-
 export default function RegistrationForm() {
 
   let navigate = useNavigate();
@@ -20,13 +18,14 @@ export default function RegistrationForm() {
     profileImage: "",
     userBD:""
   })
+  
   // style for the second column background image
-  const style ={
-    backgroundImage: `url(${img})`,
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat"
-  }
+  // const style ={
+  //   backgroundImage: `url(${img})`,
+  //   backgroundPosition: "center",
+  //   backgroundSize: "cover",
+  //   backgroundRepeat: "no-repeat"
+  // }
   
   // state for the form data errors
   const [ErrorData, SetErrorData] = useState({
@@ -184,7 +183,7 @@ export default function RegistrationForm() {
             
           </form>
         </div>
-        <div class="col-md-6" style={style}></div>
+        <div class="col-md-6" ></div>
       </div>
     </div>
   </div>

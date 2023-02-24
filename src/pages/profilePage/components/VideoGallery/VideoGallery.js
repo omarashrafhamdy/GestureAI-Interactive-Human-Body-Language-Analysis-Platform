@@ -1,6 +1,6 @@
 import React from 'react';
 
-import sampleVTT from '../ThirdSection/Sample.vtt';
+import sampleVTT from '../Dashboard/components/VideoStatistics/Sample.vtt';
 
 //import sampleVTT from '../../../Sample.vtt'
 

@@ -1,13 +1,13 @@
-import './SecondSection.css';
+import './PersonalStatistics.css';
 
 import React from 'react';
 
 import Chart from 'react-apexcharts';
 import { VscGraphLine } from 'react-icons/vsc';
 
-import DataInsightBox from './DataInsightBox';
+import DataInsightBox from '../DataInsight/DataInsightBox';
 
-export default function SecondSection() {
+export default function PersonalStatistics() {
     let CurrentTime = new Date()
     let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -15,7 +15,7 @@ export default function SecondSection() {
     let TopAction = "Happy feet"
 
     let tempData = {
-          
+       
         series: [{
             name: "Desktops",
             data: [10, 41, 35, 51, 49, 62, 69, 91, 148]

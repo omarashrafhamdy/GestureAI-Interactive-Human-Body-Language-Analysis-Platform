@@ -2,10 +2,14 @@ import './SideBar.css';
 
 import React from 'react';
 
+import { useSignOut } from 'react-auth-kit';
+
 export default function SideBar(props) {
-  // const signOut = useSignOut()
+  const signOut = useSignOut()
+  
   function logOutButton(){
-    
+    localStorage.removeItem('jwt_token');
+    signOut();
   }
 
   return (

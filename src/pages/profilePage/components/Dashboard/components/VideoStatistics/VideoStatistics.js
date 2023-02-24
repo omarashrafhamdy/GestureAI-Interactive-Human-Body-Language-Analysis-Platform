@@ -1,4 +1,4 @@
-import '../../../../../../node_modules/video-react/dist/video-react.css';
+import '../../../../../../../node_modules/video-react/dist/video-react.css';
 import './ThirdSection.css';
 
 import {
@@ -16,7 +16,7 @@ import {
 
 import sampleVTT from './Sample.vtt';
 
-export default function ThirdSection() {
+export default function VideoStatistics() {
     const [selectedOption, setSelectedOption] = useState('https://media.w3.org/2010/05/sintel/trailer_hd.mp4');
     const options = [
         { label: 'Game', value: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4' },

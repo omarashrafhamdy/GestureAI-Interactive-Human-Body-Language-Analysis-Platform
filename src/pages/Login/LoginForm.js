@@ -6,8 +6,6 @@ import {
   useNavigate
 } from 'react-router-dom';
 
-import img from './img2.jpeg';
-
 export default function LoginForm() {
   // state for the form data
   const [formData, setformData] = useState({
@@ -31,12 +29,12 @@ export default function LoginForm() {
   })
 
   // style for the second column background image
-  const style ={
-    backgroundImage: `url(${img})`,
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat"
-  }
+  // const style ={
+  //   backgroundImage: `url(${img})`,
+  //   backgroundPosition: "center",
+  //   backgroundSize: "cover",
+  //   backgroundRepeat: "no-repeat"
+  // }
 
   // function to handle the state changes
   function handleData(event){
@@ -148,7 +146,7 @@ export default function LoginForm() {
           </div>
         </form>
       </div>
-      <div className="col-md-7" style={style}>
+      <div className="col-md-7" >
       </div>
     </div>
   </div>
