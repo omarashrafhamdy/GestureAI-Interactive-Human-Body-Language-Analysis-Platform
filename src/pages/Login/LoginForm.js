@@ -1,3 +1,5 @@
+import './Login.css';
+
 import { useState } from 'react';
 
 import { useSignIn } from 'react-auth-kit';
@@ -106,9 +108,12 @@ export default function LoginForm() {
 
  return (
 
-  <div className="py-5" >
-  <div className="container bg-light">
+  <div className="py-5 d-flex align-items-center containerh" >
+  <div className="container">
     <div className="row shadow">
+    <div class="col-md-7 d-flex align-items-center">
+          <img src={process.env.PUBLIC_URL + '/imgs/ai.jpg'} class="img-fluid imgh w-100" alt="..."/>
+        </div>
       <div className="col-md-5">
         <div className="row mb-5 mt-5 justify-content-center">
           <h3 className="display-3"> Logo </h3>
@@ -139,14 +144,12 @@ export default function LoginForm() {
             }
           </div>
           <div className="justify-content-center form-group row mb-3">
-            <button onClick={handleSubmit} className="btn btn-primary btn-lg btn-block offset-md-2 form-row col-4 col-md-8">Sign in</button>
+            <button onClick={handleSubmit} className="btn blackbg white btn-lg btn-block offset-md-2 form-row col-4 col-md-8">Sign in</button>
           </div>
           <div className="row justify-content-center mb-3">
-            <h6 className="display-6"> Don't have an account? <Link to="/signup" >Sign up</Link> </h6>
+            <h6 className="display-6"> Don't have an account? <Link to="/signup" className='fontw' >Sign up</Link> </h6>
           </div>
         </form>
-      </div>
-      <div className="col-md-7" >
       </div>
     </div>
   </div>

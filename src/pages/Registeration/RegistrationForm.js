@@ -20,12 +20,12 @@ export default function RegistrationForm() {
   })
   
   // style for the second column background image
-  // const style ={
-  //   backgroundImage: `url(${img})`,
-  //   backgroundPosition: "center",
-  //   backgroundSize: "cover",
-  //   backgroundRepeat: "no-repeat"
-  // }
+  const style ={
+    backgroundImage: `url(${process.env.PUBLIC_URL + '/imgs/ai.jpg'})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat"
+  }
   
   // state for the form data errors
   const [ErrorData, SetErrorData] = useState({
@@ -89,10 +89,14 @@ export default function RegistrationForm() {
 }// end of the async function
 
   return (
+
     <div className="py-5">
     <div className="container">
-      <div className="row shadow bg-light">
-        <div className="col-md-7">
+      <div className="row shadow bg-light py-3">
+        <div class="col-md-7">
+          <img src={process.env.PUBLIC_URL + '/imgs/ai.jpg'} class="img-fluid" alt="..."/>
+        </div>
+        <div className="col-md-5">
           <div className="row mb-5 mt-5 justify-content-center">
             <h3 className="display-3"> Logo </h3>
           </div>
@@ -101,12 +105,12 @@ export default function RegistrationForm() {
               <div className="col-md-12">
                 <div className="row">
                   <div className="col-6">
-                    <div className="form-group row"><label className="col-form-label col-8" >First name</label>
+                    <div className="form-group row"><label className="col-form-label col-10" >First name</label>
                       <div className="col-12" ><input type="text" className="form-control" placeholder="First name" name='firstName' value={formData.firstName} onChange={handleData} required="required"/></div>
                     </div>
                   </div>
                   <div className="col-6">
-                    <div className="form-group row"><label className="col-form-label col-8" >Second name</label>
+                    <div className="form-group row"><label className="col-form-label col-10" >Second name</label>
                       <div className="col-12" ><input type="text" className="form-control"  placeholder="Second name" name='lastName' value={formData.lastName} onChange={handleData} required/></div>
                     </div>
                   </div>
@@ -128,7 +132,7 @@ export default function RegistrationForm() {
               <div className="col-md-12">
                 <div className="row">
                   <div className="col-6">
-                    <div className="form-group row"><label className="col-form-label col-8">Profile picture</label>
+                    <div className="form-group row"><label className="col-form-label col-10">Profile picture</label>
                       <div className="col-12" >
                         <input type="file" className="form-control pb-4"  aria-describedby="inputGroupFileAddon04" aria-label="Upload" name='profileImage' onChange={handleData} required/>
                       </div>
@@ -143,47 +147,46 @@ export default function RegistrationForm() {
               </div>
             </div>
             <div className="form-group row"> 
-            <label htmlFor="inputmailh" className="col-form-label col-4 offset-1">E-mail</label>
-              <div className="col-10 offset-1 align-self-center" >
+            <label htmlFor="inputmailh" className="col-form-label col-4 ">E-mail</label>
+              <div className="col-12  align-self-center" >
                 <input type="email" className="form-control" placeholder="mail@example.com" name='email' value={formData.email} onChange={handleData}  required/> </div>
             </div>
             { 
             <div className="form-group row">
-              <div className="col-10 offset-1">
+              <div className="col-12 ">
                 <p className="text-danger"> {ErrorData.email} </p>
               </div>
             </div>
             }
-            <div className="form-group row"> <label htmlFor="inputpasswordh" className="col-form-label col-3 offset-1">Password</label>
-              <div className="col-10 align-self-center offset-1">
+            <div className="form-group row"> <label htmlFor="inputpasswordh" className="col-form-label col-3">Password</label>
+              <div className="col-12 align-self-center">
                 <input type="password" className="form-control" placeholder="Password" value={formData.password} name="password" onChange={handleData} required/> </div>
             </div>
             <div className="form-group row">
-              <div className="col-10 offset-1">
+              <div className="col-12 ">
                 <p className="text-danger">{ErrorData.password}</p>
               </div>
             </div>
-            <div className="form-group row"> <label htmlFor="inputpasswordh" className="col-form-label col-5 offset-1">Confirm Password</label>
-              <div className="col-10 offset-1 align-self-center">
+            <div className="form-group row"> <label htmlFor="inputpasswordh" className="col-form-label col-5">Confirm Password</label>
+              <div className="col-12">
                 <input type="password" className="form-control" placeholder="Confirm Password" value={formData.confirmPassword} name='confirmPassword' onChange={handleData} required/> </div>
             </div>
             {
             <div className="form-group row">
-              <div className="col-10 offset-1">
+              <div className="col-12">
                 <p className="text-danger"> {ErrorData.password}</p>
               </div>
             </div>
             }
             <div className="justify-content-center form-group row mb-3">
-              <button onClick={handleSubmit} className="btn btn-primary btn-lg btn-block offset-md-2 form-row col-4 col-md-8">Sign up</button>
+              <button onClick={handleSubmit} className="btn blackbg white btn-lg btn-block offset-md-2 form-row col-4 col-md-8">Sign up</button>
             </div>
             <div className="row justify-content-center mb-3">
-              <h6 className="display-6"> Already have an account? <Link to="/login" >Sign in</Link> </h6>
+              <h6 className="display-6"> Already have an account? <Link to="/login" className='fontw'>Sign in</Link> </h6>
             </div>
             
           </form>
         </div>
-        <div class="col-md-6" ></div>
       </div>
     </div>
   </div>
