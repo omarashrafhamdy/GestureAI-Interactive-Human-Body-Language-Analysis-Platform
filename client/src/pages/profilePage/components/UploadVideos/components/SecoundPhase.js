@@ -20,8 +20,14 @@ export default function SecoundPhase(props) {
               <h3 className="text-center mt-5 mb-2">
                 Video is uploading... Please wait
               </h3>
-              <p className="text-center text-muted">Analyzing your video. Stick around, the magic is about to happen! 🎥🔍🎉 </p>
-              <p className="text-center text-muted"> Hang tight! We're on a mission. 🚀</p>
+              <p className="text-center text-muted">
+                Analyzing your video. Stick around, the magic is about to
+                happen! 🎥🔍🎉{" "}
+              </p>
+              <p className="text-center text-muted">
+                {" "}
+                Hang tight! We're on a mission. 🚀
+              </p>
               <div className="spinner"></div>
             </div>
           ) : (
@@ -49,7 +55,7 @@ export default function SecoundPhase(props) {
               </div>
               <div className="form-check mt-2">
                 <input
-                  name="IsShowLandmarksSelected"
+                  name="landMarks"
                   className="form-check-input "
                   type="checkbox"
                   style={{ width: "1em", height: "1em" }}
