@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 
 function UserReview() {
     const [users,setUsers] = useState([])
+
     function handleDelete(id){
         console.log(id)
         fetch(`http://127.0.0.1:5000//del-usr/${id}`, {
@@ -22,7 +23,6 @@ function UserReview() {
         .then(res=>{
             setUsers(users.filter(users => users.user_id !== id));
         })
-        
 
     }
 
@@ -58,10 +58,11 @@ function UserReview() {
             setUsers(usersArr)
         })
     }, [])
-    
   return (
     <>  
-        <h3 className='my-4'>Users in the system</h3>
+
+        <h3 className='my-4'>System user's</h3>
+
         <table class="table table-striped mx-auto">
             <thead className=''>
                 <tr>
@@ -76,7 +77,7 @@ function UserReview() {
                 </tr>
             </thead>
             <tbody>
-                {/* <tr>
+                <tr>
                     <th scope="row align-middle" className='align-middle'>1</th>
                     <td class="align-middle">Mark</td>
                     <td class="align-middle">Otto</td>
@@ -90,24 +91,8 @@ function UserReview() {
                 <button className='btn btn-danger d-flex flex-row align-items-center align-middle mb-2'>
                     <FaTrash /> <h6 className='my-auto ml-1'>Delete</h6>
                 </button>
-                        <Link to={`/user/${id}/videos`} className='btn btn-primary'>
+                        <button  className='btn btn-primary'>
                             <IoEye className='fs-6' /> View videos
-                        </Link>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row" className='align-middle'>2</th>
-                    <td class="align-middle">Mark</td>
-                    <td class="align-middle">Otto</td>
-                    <td class="align-middle">@mdo</td>
-                    <td class="align-middle">12/5/2001</td>
-                    <td class="align-middle">12/5/2001</td>
-                    <td>
-                        <span className='btn btn-secondary'>Offline</span>
-                    </td>
-                    <td>
-                        <button className='btn btn-danger'>
-                            <FaTrash /> Delete
                         </button>
                     </td>
                 </tr>
@@ -135,7 +120,7 @@ function UserReview() {
                     <td class="align-middle">12/5/2001</td>
                     <td class="align-middle">12/5/2001</td>
                     <td>
-                        <span className='btn btn-success'>Online</span>
+                        <span className='btn btn-secondary'>Offline</span>
                     </td>
                     <td>
                         <button className='btn btn-danger'>
@@ -222,7 +207,23 @@ function UserReview() {
                             <FaTrash /> Delete
                         </button>
                     </td>
-                </tr> */}
+                </tr>
+                <tr>
+                    <th scope="row" className='align-middle'>2</th>
+                    <td class="align-middle">Mark</td>
+                    <td class="align-middle">Otto</td>
+                    <td class="align-middle">@mdo</td>
+                    <td class="align-middle">12/5/2001</td>
+                    <td class="align-middle">12/5/2001</td>
+                    <td>
+                        <span className='btn btn-success'>Online</span>
+                    </td>
+                    <td>
+                        <button className='btn btn-danger'>
+                            <FaTrash /> Delete
+                        </button>
+                    </td>
+                </tr>
                     {users}
             </tbody>
         </table>

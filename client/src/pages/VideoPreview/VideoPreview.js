@@ -3,13 +3,16 @@ import React, {
   useState,
 } from 'react';
 
+import { BiArrowBack } from 'react-icons/bi';
 import { FaTrash } from 'react-icons/fa';
 import { useParams } from 'react-router-dom';
+
+import Footer from '../landingPage/components/Footer/Footer';
 
 function VideoPreview() {
     const [vids,setVids] = useState()
     const { id } = useParams();
-
+    const [isdata] = useState(false)
     function handleDelete(vid_id){
         fetch(`http://127.0.0.1:5000//del-vid/${vid_id}`, {
             method: 'DELETE',
@@ -24,7 +27,10 @@ function VideoPreview() {
         })
 
     }
-    
+
+    const goBack = () => {
+    window.history.back();
+    };
 
     useEffect(() => {
         fetch(`http://127.0.0.1:5000//videos/${id}`)
@@ -55,87 +61,110 @@ function VideoPreview() {
     }, [])
 
   return (
-    <div className=' py-4'>
-      <div className='d-flex justify-content-center'>
-        <h1 className='display-4'>
-          Review omar hanafy's videos
-        </h1>
+    <div>
+    <div className='py-4'>
+
+      <div className='justifying'>
+
+        <div className='mx-1 d-flex'>
+            <h3 className='my-auto growbig'>
+                <BiArrowBack onClick={goBack}/>
+            </h3>
+        </div>
+        <div className='mx-auto'>
+            <h1 className='display-8'>
+                You are reviewing omar hanafy's videos
+            </h1>
+        </div>
+        <div className='mx-1 d-flex'>
+            <h3 className='my-auto'>
+                6 videos
+            </h3>            
+        </div>
+
       </div>
+
       <hr />
 
-      <div className="row w-100">
-        {/* <div className="col-md-4 d-flex mb-3">
-        <div className="card w-75 mx-auto Brounded shadow-lg" >
+      <div className="row w-100 mx-auto">
+{   isdata   ?<>
+        <div className="col-md-4 d-flex mb-3">
+        <div className="card w-90 mx-auto Brounded shadow-lg" >
             <video src={process.env.PUBLIC_URL + '/videos/bg.mp4'} className="object-fit-contain w-100 p-4 " autoPlay loop controls />
             <div className="card-body">
                 <h5 className="card-title fw-bold">Card title</h5>
                 <p className="card-text fw-semibold">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <p className="card-text fw-semibold">duration : 1 min 26 sec</p>
                 <p className="card-text fw-semibold">Release date : 12/5/2001</p>
-                <button className='btn btn-danger d-flex flex-row align-items-center align-middle p-2' onClick={()=>handleDelete(id)}>
-                    <FaTrash /> <h6 className='my-auto ml-1'>Delete</h6>
+                <button className='btn btn-danger d-flex flex-row align-items-center align-middle grow p-2' onClick={()=>handleDelete(id)}>
+                    <FaTrash className='grow'/> <h6 className='my-auto ml-1'>Delete</h6>
                 </button>
             </div>
         </div>
         </div>
         <div className="col-md-4 d-flex mb-3 ">
-        <div className="card w-75 mx-auto Brounded shadow-lg" >
+        <div className="card w-90 mx-auto Brounded shadow-lg" >
             <video src={process.env.PUBLIC_URL + '/videos/bg.mp4'} className="object-fit-contain w-100 p-4" autoPlay loop controls />
             <div className="card-body">
                 <h5 className="card-title fw-bold">Card title</h5>
                 <p className="card-text fw-semibold">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <p className="card-text fw-semibold">duration : 1 min 26 sec</p>
                 <p className="card-text fw-semibold">Release date : 12/5/2001</p>
-                <button className='btn btn-danger d-flex flex-row align-items-center align-middle p-2' onClick={()=>handleDelete(id)}>
-                    <FaTrash /> <h6 className='my-auto ml-1'>Delete</h6>
+                <button className='btn btn-danger d-flex flex-row align-items-center align-middle p-2 grow' onClick={()=>handleDelete(id)}>
+                    <FaTrash className='grow' /> <h6 className='my-auto ml-1'>Delete</h6>
                 </button>
             </div>
         </div>
         </div>
         <div className="col-md-4 d-flex mb-3 ">
-        <div className="card w-75 mx-auto Brounded shadow-lg" >
+        <div className="card w-90 mx-auto Brounded shadow-lg" >
             <video src={process.env.PUBLIC_URL + '/videos/bg.mp4'} className="object-fit-contain w-100 p-4" autoPlay loop controls />
             <div className="card-body">
                 <h5 className="card-title fw-bold">Card title</h5>
                 <p className="card-text fw-semibold">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <p className="card-text fw-semibold">duration : 1 min 26 sec</p>
                 <p className="card-text fw-semibold">Release date : 12/5/2001</p>
-                <button className='btn btn-danger d-flex flex-row align-items-center align-middle p-2' onClick={()=>handleDelete(2)}>
-                    <FaTrash /> <h6 className='my-auto ml-1'>Delete</h6>
+                <button className='btn btn-danger d-flex flex-row align-items-center align-middle grow p-2' onClick={()=>handleDelete(2)}>
+                    <FaTrash className='grow'/> <h6 className='my-auto ml-1'>Delete</h6>
                 </button>
             </div>
         </div>
         </div>
         <div className="col-md-4 d-flex mb-3 ">
-        <div className="card w-75 mx-auto Brounded shadow-lg" >
+        <div className="card w-90 mx-auto Brounded shadow-lg" >
             <video src={process.env.PUBLIC_URL + '/videos/bg.mp4'} className="object-fit-contain w-100 p-4" autoPlay loop controls />
             <div className="card-body">
                 <h5 className="card-title fw-bold">Card title</h5>
                 <p className="card-text fw-semibold">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <p className="card-text fw-semibold">duration : 1 min 26 sec</p>
                 <p className="card-text fw-semibold">Release date : 12/5/2001</p>
-                <button className='btn btn-danger d-flex flex-row align-items-center align-middle p-2' onClick={()=>handleDelete(4)}>
-                    <FaTrash /> <h6 className='my-auto ml-1'>Delete</h6>
+                <button className='btn btn-danger d-flex flex-row align-items-center align-middle p-2 grow' onClick={()=>handleDelete(4)}>
+                    <FaTrash className='grow'/> <h6 className='my-auto ml-1'>Delete</h6>
                 </button>
             </div>
         </div>
         </div>
         <div className="col-md-4 d-flex mb-3 ">
-        <div className="card w-75 mx-auto Brounded shadow-lg" >
+        <div className="card w-90 mx-auto Brounded shadow-lg" >
             <video src={process.env.PUBLIC_URL + '/videos/bg.mp4'} className="object-fit-contain w-100 p-4" autoPlay loop controls />
             <div className="card-body">
                 <h5 className="card-title fw-bold">Card title</h5>
                 <p className="card-text fw-semibold">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <p className="card-text fw-semibold">duration : 1 min 26 sec</p>
                 <p className="card-text fw-semibold">Release date : 12/5/2001</p>
-                <button className='btn btn-danger d-flex flex-row align-items-center align-middle p-2'>
-                    <FaTrash /> <h6 className='my-auto ml-1'>Delete</h6>
+                <button className='btn btn-danger d-flex flex-row align-items-center align-middle p-2 grow'>
+                    <FaTrash className='grow' /> <h6 className='my-auto ml-1'>Delete</h6>
                 </button>
             </div>
         </div>
-        </div> */}
+        </div></>
+        : <div className='col-12 mx-auto d-flex '><img src={process.env.PUBLIC_URL + '/imgs/2953962.jpg'} className='w-50 mx-auto'/></div>
+}
         {vids}
       </div>
+
+    </div>
+    <Footer/>
     </div>
   )
 }

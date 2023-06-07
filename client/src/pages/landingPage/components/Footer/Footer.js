@@ -8,11 +8,11 @@ function Footer() {
         <div className="footer-basic blackbackground">
         <footer>
             <ul className="list-inline">
-                <li className="list-inline-item"><a href="#">Home</a></li>
-                <li className="list-inline-item"><a href="#WhatWeOffer">About</a></li>
-                <li className="list-inline-item"><a href="#liveDemo">Features</a></li>
-                <li className="list-inline-item"><a href="http://localhost:3000/signin">Sign in</a></li>
-                <li className="list-inline-item"><a href="http://localhost:3000/signup">Sign Up</a></li>
+                <li className="list-inline-item grow"><a href="#">Home</a></li>
+                <li className="list-inline-item grow"><a href="#WhatWeOffer">About</a></li>
+                <li className="list-inline-item grow"><a href="#liveDemo">Features</a></li>
+                <li className="list-inline-item grow"><a href="http://localhost:3000/signin">Sign in</a></li>
+                <li className="list-inline-item grow"><a href="http://localhost:3000/signup">Sign Up</a></li>
             </ul>
             <p className="copyright"> GestureSense © 2023</p>
         </footer>

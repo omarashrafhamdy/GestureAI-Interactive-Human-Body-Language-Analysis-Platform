@@ -3,6 +3,7 @@ import './SideBar.css';
 import React from 'react';
 
 import { useSignOut } from 'react-auth-kit';
+import { Link } from 'react-router-dom';
 
 export default function SideBar(props) {
   const signOut = useSignOut()
@@ -13,7 +14,12 @@ export default function SideBar(props) {
   }
 
   return (
-    <div className='py-5 ml-3'>
+    <div className='py-5'>
+
+      <div className='my-3 grow'>
+      <Link to={'/'} className='sidebarLogo'>-GestureSense-</Link>
+      </div>
+
       <div className=''>
         <img className="profileImg" src={props.sideBarData.userImage} />
         <p className='mt-2 UserName'>{`${props.sideBarData.firstName} ${props.sideBarData.lastName}`}</p>

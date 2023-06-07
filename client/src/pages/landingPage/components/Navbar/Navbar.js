@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-md w-100">
 
-    <a className="navbar-brand font30 fontcolor ml-5 nohover" href="#">
+    <a className="navbar-brand font30 fontcolor ml-5 nohover grow" href="#">
     -GestureSense-
     </a>
 
@@ -17,16 +17,16 @@ function Navbar() {
 
         <ul className="nav nav-pills ">
             <li className="nav-item m-3">
-                <Link className='nav-link font24 fontcolor px-3' to="/"> Home</Link>
+                <Link className='nav-link font24 fontcolor px-3 grow' to="/"> Home</Link>
             </li>
             <li className="nav-item m-3">
-                <a className="nav-link font24 fontcolor px-3" href="#WhatWeOffer">About</a>
+                <a className="nav-link font24 fontcolor px-3 grow" href="#WhatWeOffer">About</a>
             </li>
             <li className="nav-item m-3">
-                <a className="nav-link font24 fontcolor px-3" href="#liveDemo">Features</a>
+                <a className="nav-link font24 fontcolor px-3 grow" href="#liveDemo">Features</a>
             </li>
             <li className="nav-item m-3">
-                <Link className="nav-link font24 fontcolor px-3"  to="/signin">Sign in</Link>
+                <Link className="nav-link font24 fontcolor px-3 grow"  to="/signin">Sign in</Link>
             </li>
         </ul>
         
