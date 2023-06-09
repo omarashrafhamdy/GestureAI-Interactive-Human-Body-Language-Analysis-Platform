@@ -53,7 +53,7 @@ export default function ProfilePage() {
         })
     }
 
-    , []);
+  , []);
 
 
   function ChangeViewFuntion(viewID) {

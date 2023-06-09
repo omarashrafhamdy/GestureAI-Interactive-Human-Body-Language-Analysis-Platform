@@ -31,8 +31,28 @@ function UserReview() {
         .then(response => response.json())
         .then(data => {
             const users = data.Data
-            console.log(users)
-            const usersArr = users.map((user)=>{
+            setUsers(users)
+        })
+    }, [])
+    
+  return (
+    <>  
+        <h3 className='my-4'>Users in the system</h3>
+        <table class="table table-striped mx-auto">
+            <thead className=''>
+                <tr>
+                    <th scope="col">User ID</th>
+                    <th scope="col">First name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Birthday</th>
+                    <th scope="col">Last sign in</th>
+                    <th scope="col">Activity</th>
+                    <th scope="col-span-2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {users.map((user)=>{
                 return(
                     <tr key={user.user_id}>
                         <th scope="row align-middle" className='align-middle'>{user.user_id}</th>
@@ -54,6 +74,7 @@ function UserReview() {
                         </td>
                     </tr>
                 )
+<<<<<<< Updated upstream
             })
             setUsers(usersArr)
         })
@@ -225,6 +246,9 @@ function UserReview() {
                     </td>
                 </tr>
                     {users}
+=======
+            })}
+>>>>>>> Stashed changes
             </tbody>
         </table>
     </>
